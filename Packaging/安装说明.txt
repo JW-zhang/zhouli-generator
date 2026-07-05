@@ -1,0 +1,13 @@
+周礼生成器安装说明
+
+1. 打开这个 dmg。
+2. 将 ZhouliGenerator.app 拖到 Applications 文件夹。
+3. 第一次打开时，如果 macOS 提示无法验证开发者，请右键点击 ZhouliGenerator.app，选择“打开”。
+4. 打开后，到“系统设置 -> 隐私与安全性 -> 辅助功能”，允许 ZhouliGenerator 控制电脑。
+5. 重新启动 ZhouliGenerator。
+6. 在微信中选中文字，按 Option + Space 唤醒。
+
+说明：
+- 当前版本用于小范围试用，尚未经过 Apple Developer ID 公证。
+- 应用只会在你按快捷键时读取当前选中的文本，并在你确认后把回复插入输入框。
+- 默认不会自动发送消息。
