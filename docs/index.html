@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>周礼生成器</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Web 方案 B</p>
+          <h1>周礼生成器</h1>
+        </div>
+        <div class="topbar-actions" aria-label="生成模式">
+          <button class="mode-button is-active" type="button" data-tone="measured">持平</button>
+          <button class="mode-button" type="button" data-tone="sharp">峻切</button>
+          <button class="mode-button" type="button" data-tone="gentle">温厚</button>
+        </div>
+      </header>
+
+      <section class="workspace" aria-label="周礼回复生成器">
+        <div class="input-pane">
+          <div class="pane-heading">
+            <div>
+              <h2>聊天上下文</h2>
+              <p id="inputMeta">粘贴对方发言，生成可编辑回复。</p>
+            </div>
+            <button class="icon-button" type="button" id="clearButton" aria-label="清空输入" title="清空">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <textarea id="contextInput" spellcheck="false" placeholder="例如：你可能不太适应我们这里的节奏，最近压力也大，先看这个月表现吧。"></textarea>
+          <div class="input-actions">
+            <button type="button" id="sampleButton">换个示例</button>
+            <button type="button" id="generateButton">生成回复</button>
+          </div>
+        </div>
+
+        <div class="result-pane">
+          <div class="result-summary">
+            <div>
+              <span class="label">判断</span>
+              <strong id="standardText">待生成</strong>
+            </div>
+            <div>
+              <span class="label">依据</span>
+              <strong id="sourceText">待生成</strong>
+            </div>
+          </div>
+
+          <section class="output-block">
+            <div class="block-title">
+              <h2>古文依据</h2>
+              <button class="copy-button" type="button" data-copy-target="classicalText">复制</button>
+            </div>
+            <p id="classicalText">输入聊天内容后，将在这里显示匹配到的古文依据。</p>
+          </section>
+
+          <section class="output-block reply-block">
+            <div class="block-title">
+              <h2>生成回复</h2>
+              <button class="copy-button" type="button" data-copy-target="replyText">复制</button>
+            </div>
+            <textarea id="replyText" spellcheck="false">输入聊天内容后，将在这里生成回复。</textarea>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
